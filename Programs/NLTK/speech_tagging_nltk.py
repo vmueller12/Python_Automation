@@ -23,12 +23,26 @@ def process_content():
             chunkParser = nltk.RegexpParser(chunkGram)
             chunked = chunkParser.parse(tagged)
             print(chunked)
-            #chunked.draw()     
+            chunked.draw()     
 
     except Exception as e:
         print(str(e))
 
-process_content()
 
 
-process_content()
+def process_content2():
+    try:
+        for i in tokenized:
+            words = nltk.word_tokenize(i)
+            tagged = nltk.pos_tag(words)
+
+            chunkGram = r"""Chunk: {<.?>+}
+  """
+            chunkParser = nltk.RegexpParser(chunkGram)
+            chunked = chunkParser.parse(tagged)
+              
+
+    except Exception as e:
+        print(str(e))
+
+#process_content()
